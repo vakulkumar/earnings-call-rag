@@ -8,6 +8,17 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 🎬 Demo
+
+**Premium Web Interface** - A professional-grade chat UI matching industry leaders like Gemini, ChatGPT, and Grok.
+
+Open `web-interface.html` in your browser to experience:
+- 🌙 Dark theme with glassmorphism effects
+- 💬 Chat-based interface with message bubbles
+- 📤 Drag-and-drop PDF uploads
+- ✨ Smooth 60fps animations
+- 📱 Fully responsive design
+
 ## 🎯 Overview
 
 This application demonstrates state-of-the-art AI integration in Java, allowing users to:
@@ -23,6 +34,8 @@ This application demonstrates state-of-the-art AI integration in Java, allowing 
 📊 **Smart Chunking** - Intelligent document chunking with overlap for better context  
 🎯 **RAG Pipeline** - Complete implementation of Retrieval-Augmented Generation  
 📚 **Source Citations** - Answers include document name, page numbers, and similarity scores  
+🎨 **Premium UI** - Professional chat interface rivaling Gemini/ChatGPT quality  
+📱 **Responsive Design** - Works beautifully on desktop, tablet, and mobile  
 
 ## 🏗️ Architecture
 
@@ -306,6 +319,71 @@ Question → Embedding → Vector Search → Top Chunks →
 - **Embedding Generation**: Batch processing
 - **Vector Search**: HNSW index for O(log n) performance
 - **Query Response**: ~2-3 seconds end-to-end
+
+## 🎨 Web Interface
+
+The application includes a **premium web interface** (`web-interface.html`) with:
+
+### Features
+- **Dark Theme** - Modern dark color palette with purple accents
+- **Chat Interface** - Conversation-style message bubbles
+- **Glassmorphism** - Backdrop blur and frosted glass effects
+- **Animations** - Smooth 60fps transitions and loading states
+- **Drag & Drop** - Upload PDFs by dragging into the browser
+- **Responsive** - Works on desktop, tablet, and mobile
+- **Source Citations** - View document sources for each answer
+
+### Using the Web Interface
+
+1. Start the backend server:
+```bash
+./start.sh
+```
+
+2. Open `web-interface.html` in your browser
+
+3. Upload a PDF using the upload button or drag & drop
+
+4. Ask questions in the chat input
+
+## 📁 Project Structure
+
+```
+earnings-call-rag/
+├── src/main/java/com/earningscall/rag/
+│   ├── EarningsCallRagApplication.java
+│   ├── config/
+│   │   └── AsyncConfig.java
+│   ├── controller/
+│   │   ├── DocumentController.java
+│   │   └── QuestionController.java
+│   ├── model/
+│   │   ├── Document.java
+│   │   ├── DocumentChunk.java
+│   │   └── dto/
+│   ├── repository/
+│   │   ├── DocumentRepository.java
+│   │   └── DocumentChunkRepository.java
+│   ├── service/
+│   │   ├── EmbeddingService.java
+│   │   ├── PdfProcessingService.java
+│   │   ├── RagService.java
+│   │   └── VectorStorageService.java
+│   └── util/
+│       ├── PdfTextExtractor.java
+│       └── TextChunker.java
+├── src/main/resources/
+│   ├── application.yml
+│   └── schema.sql
+├── web-interface.html        # Premium chat UI
+├── docker-compose.yml        # PostgreSQL + pgvector
+├── start.sh                  # Startup script
+├── test-api.sh              # API testing script
+├── README.md
+├── ARCHITECTURE.md          # Technical deep-dive
+├── QUICKSTART.md            # Quick reference
+└── pom.xml
+```
 
 ## 🤝 Contributing
 
